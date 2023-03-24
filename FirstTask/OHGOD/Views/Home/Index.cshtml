@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Name getter";
+}
+
+<div class="containerbody">
+    <h1>Greetings!</h1>
+    @using (Html.BeginForm("Greeting", "Home", FormMethod.Post, new { id = "greeting-form" }))
+    {
+        <p>What's your name?</p>
+        <div>@Html.TextBox("Name", "Bebra")</div>
+        <div>
+            <button type="submit">Send Greeting</button>
+        </div>
+    }
+    <div id="greeting-message"></div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            $('#greeting-form').submit(function (event) {
+                event.preventDefault(); // prevent the form from submitting normally
+
+                var form = $(this);
+                var url = form.attr('action');
+                var data = form.serialize();
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: data,
+                    success: function (response) {
+                        $('#greeting-message').text(response.name); // update the message on the page
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+}
