@@ -7,24 +7,29 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/todo_list.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background: linear-gradient(to bottom, #FFB6C1, #FFFFFF);
+        }
+
+        .navbar-brand {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #FFB6C1;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-#FFB6C1;">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">todo_list</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
 
-                    </ul>
-                </div>
             </div>
         </nav>
     </header>
@@ -37,7 +42,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - todo_list <asp-area="" asp-controller="Home" </>
+            &copy; 2023 - todo_list <asp-area ="" asp-controller="Home" </>
         </div>
     </footer>
 

@@ -1,64 +1,19 @@
-﻿a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-size: 2.5rem;
-    color: #ff7f50;
+﻿
+.navbar {
+    background-color: pink; /* розовый цвет навбара */
 }
 
-a {
-    color: #8f4f4f;
-    font-family: 'Pacifico', cursive;
-    font-size: 1.5rem;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #ffa07a;
-    border-color: #f08080;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 20px;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: #ffc0cb;
-    border-color: #ff69b4;
-    font-size: 1.1rem;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-}
-
-.border-top {
-    border-top: 2px dotted #6495ed;
-}
-
-.border-bottom {
-    border-bottom: 2px dotted #6495ed;
-}
-
-.box-shadow {
-    box-shadow: 0 .3rem .6rem rgba(128, 128, 128, .3);
-}
-
-button.accept-policy {
-    font-family: 'Helvetica', sans-serif;
-    font-size: 1.4rem;
-    line-height: 3;
-    color: #20b2aa;
-    background-color: #ffdab9;
-    border: 2px solid #cd853f;
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
+.navbar-brand {
+    display: block;
+    width: 100%;
+    text-align: center; /* название сайта по центру */
 }
 
 .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #ffe4c4;
+    background-color: #FFB6C1;
     text-align: center;
     font-size: 1.2rem;
     font-family: 'Lucida Sans', sans-serif;

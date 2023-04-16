@@ -1,0 +1,84 @@
+﻿
+.btn-pink {
+    color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.btn-outline-pink {
+    color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.form-control {
+    border-radius: 30px;
+    border: none;
+    background-color: #F8F8FF;
+    color: #5F5F5F;
+    font-size: 16px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+}
+
+.list-group-item-cute {
+    background-color: #FFB6C1;
+    color: #5F5F5F;
+}
+
+.list-group-item-success {
+    background-color: #FFC6D0;
+    color: #5F5F5F;
+}
+
+.list-group-item-danger {
+    background-color: #E88088;
+    color: #5F5F5F;
+}
+
+.list-group-item-warning {
+    background-color: #F5959A;
+    color: #5F5F5F;
+}
+
+.btn-cute {
+    color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #FFB6C1;
+}
+
+h4 {
+    color: #C2185B;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-select {
+    border-radius: 30px;
+    border: none;
+    background-color: #F8F8FF;
+    color: #5F5F5F;
+    font-size: 16px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+}
+
+.field-validation-error {
+    color: #D32F2F;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

@@ -37,7 +37,6 @@ namespace ToDoListMVC.Controllers
             await _repo.CreateTasksAsync(item);
             return RedirectToAction("Index");
         }
-
         [HttpGet]
         public async Task<IActionResult> DeleteTask(int id)
         {
