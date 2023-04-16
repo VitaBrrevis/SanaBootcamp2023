@@ -1,0 +1,87 @@
+﻿@model TasksAndCategoriesViewModel
+@{
+    ViewData["Title"] = "Cute ToDo List";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post" class="mb-5 text-center">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label for="category_id">Choose a Cute Category ^_^</label>
+                    <select id="category_id" name="category_id" class="form-select">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.id">@category.name ♡</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Cute Task</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Cute Task >_^" />
+                </div>
+                <div class="form-group">
+                    <label for="due_date">Cute DueDate</label>
+                    <input type="datetime-local" class="form-control" id="due_date" name="due_date" />
+                </div>
+                <button type="submit" class="btn btn-pink">Cute Create ♡</button>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <div class="list-group">
+                @foreach (var task in Model.Tasks)
+                {
+                    var bgColor = "";
+                    if (task.status)
+                    {
+                        bgColor = "list-group-item-success";
+                    }
+                    else if (task.due_date == null)
+                    {
+                        bgColor = "list-group-item-cute";
+                    }
+                    else
+                    {
+                        DateTime dueDate = (DateTime)task.due_date;
+                        TimeSpan timeDiff = dueDate - DateTime.Now;
+                        if (timeDiff.TotalDays <= 0)
+                        {
+                            bgColor = "list-group-item-danger";
+                        }
+                        else if (timeDiff.TotalDays > 0 && timeDiff.TotalDays < 3)
+                        {
+                            bgColor = "list-group-item-warning";
+                        }
+                        else
+                        {
+                            bgColor = "list-group-item-cute";
+                        }
+                    }
+                    <div class="list-group-item @bgColor">
+                        <div class="d-flex justify-content-between flex-column">
+                            <h4 class="mb-2">@task.name ♡</h4>
+                            @if (task.due_date is not null)
+                            {
+                                <p>Cute DueDate: @task.due_date ♡</p>
+                            }
+                        </div>
+                        <p class="mb-2">Cute Category: @Model.Categories.FirstOrDefault(x => x.id == task.category_id)?.name ♡</p>
+                        <div class="d-flex justify-content-between">
+                            <form method="post" class="me-1">
+                                <input type="hidden" name="id" value="@task.id" />
+                                <button type="submit" class="btn @(task.status ? "btn-outline-success" : "btn-success")">
+                                    @(task.status ? "Cute Uncompleted" : "Cute Completed")
+                                </button>
+                            </form>
+                            <form method="post">
+                                <input type="hidden" name="id" value="@task.id" />
+                                <button type="submit" class="btn btn-cute">Cute Delete ^_^</button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
