@@ -117,8 +117,8 @@ namespace todo_list.Repository
             task.category_id = int.Parse(taskXml.Attributes["category_id"].Value);
             task.name = taskXml.Attributes["name"].Value;
             string? date = taskXml.Attributes["due_date"].Value;
-            task.due_date = string.IsNullOrEmpty(date) ? (DateTime?)null : DateTime.ParseExact(date, "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture);
-
+            DateTime.TryParseExact(date, new string[] { "dd/MM/yyyy h:mm:ss tt", "d/M/yyyy h:mm:ss tt" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dueDate);
+            task.due_date = dueDate != DateTime.MinValue ? dueDate : (DateTime?)null;
             task.status = bool.Parse(taskXml.Attributes["status"].Value);
             return task;
         }
