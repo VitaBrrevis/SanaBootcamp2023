@@ -6,5 +6,6 @@ namespace todo_list.Models.DTO
     {
         public IEnumerable<Tasks> Tasks { get; set; } = new List<Tasks>();
         public IEnumerable<Categories> Categories { get; set; } = new List<Categories>();
+        public string? Type { get; set; }
     }
 }

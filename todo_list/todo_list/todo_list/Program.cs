@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<ITasks, TasksRepo>();
+builder.Services.AddScoped<ITasksXML, TasksRepoXML>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
